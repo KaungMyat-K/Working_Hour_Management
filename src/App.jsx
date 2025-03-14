@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 
-import Login from "./pages/login/Login";
-import Home from "./pages/Layout/home/Home";
-import Layout from "./pages/Layout/Layout";
+import LayoutPage from "./pages/home/Layout";
+import Home from "./pages/home/daily_task/index";
+import Login from "./pages/login";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
 
-        <Route path="/home" element={<Layout />}>
+        <Route path="/home" element={<LayoutPage />}>
           <Route index element={<Home />} />
         </Route>
       </Routes>
