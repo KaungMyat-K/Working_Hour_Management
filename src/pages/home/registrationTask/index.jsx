@@ -74,14 +74,20 @@ const Home = () => {
             padding: { xs: 1, sm: 0 },
           }}
         >
-          <img
-            src={profile}
-            style={{
-              width: { xs: "5vh", sm: "7vh" },
-              marginLeft: { xs: 5, sm: 10 },
+          <Box
+            sx={{
+              marginLeft: { xs: 0, sm: 1 },
             }}
-            alt="Profile"
-          />
+          >
+            <img
+              src={profile}
+              style={{
+                width: "7vh",
+                marginLeft: { xs: 5, sm: 10 },
+              }}
+              alt="Profile"
+            />
+          </Box>
           <Box sx={{ display: "flex", flexDirection: "column" }}>
             <Typography
               sx={{
@@ -153,14 +159,19 @@ const Home = () => {
             padding: { xs: 1, sm: 0 },
           }}
         >
-          <img
-            src={immigration}
-            style={{
-              width: { xs: "5vh", sm: "7vh" },
-              marginLeft: { xs: 5, sm: 10 },
+          <Box
+            sx={{
+              marginLeft: { xs: 0, sm: 1 },
             }}
-            alt="Immigration"
-          />
+          >
+            <img
+              src={immigration}
+              style={{
+                width: "7vh",
+              }}
+              alt="Immigration"
+            />
+          </Box>
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <FormControl
               variant="standard"
@@ -187,31 +198,36 @@ const Home = () => {
         {/* Date */}
         <Box
           sx={{
-            height: { xs: "15vh", sm: "13vh" }, // Adjust height for different screen sizes
+            height: { xs: "15vh", sm: "13vh" },
             width: {
               xs: "90vw",
               sm: "70vw",
               md: "40vw",
               lg: "30vw",
               xl: "20vw",
-            }, // Adjust width for different screen sizes
+            },
             backgroundColor: "white",
             borderRadius: 2,
             display: "flex",
             alignItems: "center",
-            gap: { xs: 2, sm: 4 }, // Adjust gap for different screen sizes
-            padding: { xs: 1, sm: 0 }, // Add padding for smaller screens
+            gap: { xs: 2, sm: 4 },
+            padding: { xs: 1, sm: 0 },
           }}
         >
           {/* Image */}
-          <img
-            src={calendar}
-            style={{
-              width: { xs: "5vh", sm: "7vh" }, // Adjust image size for different screen sizes
-              marginLeft: { xs: 5, sm: 10 }, // Adjust margin for different screen sizes
+          <Box
+            sx={{
+              marginLeft: { xs: 0, sm: 1 },
             }}
-            alt="Calendar"
-          />
+          >
+            <img
+              src={calendar}
+              style={{
+                width: "7vh", // Fixed image size
+              }}
+              alt="Calendar"
+            />
+          </Box>
 
           {/* DatePicker */}
           <Box sx={{ display: "flex", alignItems: "center" }}>
