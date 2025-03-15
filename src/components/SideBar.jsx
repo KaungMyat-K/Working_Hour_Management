@@ -64,7 +64,7 @@ export default function SideBar() {
           <TaskOutlined
             sx={{ fontSize: "20px", paddingRight: "5px", paddingLeft: "5px" }}
           />
-          Register Tasks
+          Registration
         </Box>
 
         {/* Second Box */}

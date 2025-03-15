@@ -2,7 +2,6 @@ import {
   Box,
   Button,
   FormControl,
-  Input,
   InputLabel,
   MenuItem,
   Select,
@@ -16,6 +15,7 @@ import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import RegistrationForm from "../../../components/RegistrationForm";
 
 const Home = () => {
   const [age, setAge] = useState("");
@@ -32,6 +32,7 @@ const Home = () => {
         gap: 2,
       }}
     >
+      {/* first section */}
       <Box
         sx={{
           height: "5vh",
@@ -46,6 +47,7 @@ const Home = () => {
           Registration Tasks
         </Typography>
       </Box>
+      {/* second section */}
       <Box
         sx={{
           height: "15vh",
@@ -56,18 +58,37 @@ const Home = () => {
         {/* user info */}
         <Box
           sx={{
-            height: "13vh",
-            width: "20vw",
+            height: { xs: "15vh", sm: "13vh" },
+            width: {
+              xs: "90vw",
+              sm: "70vw",
+              md: "40vw",
+              lg: "30vw",
+              xl: "20vw",
+            },
             backgroundColor: "white",
             borderRadius: 2,
             display: "flex",
             alignItems: "center",
-            gap: 4,
+            gap: { xs: 2, sm: 4 },
+            padding: { xs: 1, sm: 0 },
           }}
         >
-          <img src={profile} style={{ width: "7vh", marginLeft: 10 }}></img>
+          <img
+            src={profile}
+            style={{
+              width: { xs: "5vh", sm: "7vh" },
+              marginLeft: { xs: 5, sm: 10 },
+            }}
+            alt="Profile"
+          />
           <Box sx={{ display: "flex", flexDirection: "column" }}>
-            <Typography sx={{ color: "rgb(106, 99, 105)", fontSize: "14px" }}>
+            <Typography
+              sx={{
+                color: "rgb(106, 99, 105)",
+                fontSize: { xs: "12px", sm: "14px" },
+              }}
+            >
               Staff Info
             </Typography>
 
@@ -75,7 +96,7 @@ const Home = () => {
               <Typography
                 sx={{
                   color: "rgb(118, 107, 107)",
-                  fontSize: "13px",
+                  fontSize: { xs: "12px", sm: "13px" },
                   width: "50px",
                 }}
               >
@@ -84,19 +105,18 @@ const Home = () => {
               <Typography
                 sx={{
                   color: "rgb(96, 94, 94)",
-                  fontSize: "15px",
+                  fontSize: { xs: "13px", sm: "15px" },
                   fontWeight: "bold",
                 }}
               >
                 123123
               </Typography>
             </Box>
-
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <Typography
                 sx={{
                   color: "rgb(96, 94, 94)",
-                  fontSize: "13px",
+                  fontSize: { xs: "12px", sm: "13px" },
                   width: "50px",
                 }}
               >
@@ -105,7 +125,7 @@ const Home = () => {
               <Typography
                 sx={{
                   color: "rgb(118, 107, 107)",
-                  fontSize: "15px",
+                  fontSize: { xs: "13px", sm: "15px" },
                   fontWeight: "bold",
                 }}
               >
@@ -117,18 +137,37 @@ const Home = () => {
         {/* attendance */}
         <Box
           sx={{
-            height: "13vh",
-            width: "15vw",
+            height: { xs: "10vh", sm: "13vh" },
+            width: {
+              xs: "90vw",
+              sm: "50vw",
+              md: "30vw",
+              lg: "20vw",
+              xl: "15vw",
+            },
             backgroundColor: "white",
             borderRadius: 2,
             display: "flex",
             alignItems: "center",
-            gap: 4,
+            gap: { xs: 2, sm: 4 },
+            padding: { xs: 1, sm: 0 },
           }}
         >
-          <img src={immigration} style={{ width: "7vh", marginLeft: 10 }}></img>
+          <img
+            src={immigration}
+            style={{
+              width: { xs: "5vh", sm: "7vh" },
+              marginLeft: { xs: 5, sm: 10 },
+            }}
+            alt="Immigration"
+          />
           <Box sx={{ display: "flex", alignItems: "center" }}>
-            <FormControl variant="standard" sx={{ minWidth: 120 }}>
+            <FormControl
+              variant="standard"
+              sx={{
+                minWidth: { xs: 100, sm: 120 },
+              }}
+            >
               <InputLabel id="demo-simple-select-standard-label">
                 Attendance
               </InputLabel>
@@ -148,28 +187,45 @@ const Home = () => {
         {/* Date */}
         <Box
           sx={{
-            height: "13vh",
-            width: "20vw",
+            height: { xs: "15vh", sm: "13vh" }, // Adjust height for different screen sizes
+            width: {
+              xs: "90vw",
+              sm: "70vw",
+              md: "40vw",
+              lg: "30vw",
+              xl: "20vw",
+            }, // Adjust width for different screen sizes
             backgroundColor: "white",
             borderRadius: 2,
             display: "flex",
             alignItems: "center",
-            gap: 4,
+            gap: { xs: 2, sm: 4 }, // Adjust gap for different screen sizes
+            padding: { xs: 1, sm: 0 }, // Add padding for smaller screens
           }}
         >
-          <img src={calendar} style={{ width: "7vh", marginLeft: 10 }}></img>
+          {/* Image */}
+          <img
+            src={calendar}
+            style={{
+              width: { xs: "5vh", sm: "7vh" }, // Adjust image size for different screen sizes
+              marginLeft: { xs: 5, sm: 10 }, // Adjust margin for different screen sizes
+            }}
+            alt="Calendar"
+          />
+
+          {/* DatePicker */}
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DemoContainer components={["DatePicker"]}>
                 <DatePicker
                   label="Report Date"
                   sx={{
-                    // width: "300px",
+                    width: { xs: "100px", sm: "150px", md: "200px" },
                     "& .MuiInputBase-root": {
                       height: "40px",
                     },
                     "& .MuiFormLabel-root": {
-                      fontSize: "14px",
+                      fontSize: { xs: "12px", sm: "14px" },
                       color: "rgb(118, 107, 107)",
                       transform: "translate(14px, 10px) scale(1)",
                       "&.Mui-focused, &.MuiInputLabel-shrink": {
@@ -186,6 +242,7 @@ const Home = () => {
           </Box>
         </Box>
       </Box>
+      {/* third section */}
       <Box
         sx={{
           height: "73.5vh",
@@ -271,6 +328,7 @@ const Home = () => {
             height: "100%",
           }}
         >
+          {/* Header */}
           <Box
             sx={{
               display: "flex",
@@ -280,11 +338,12 @@ const Home = () => {
               padding: 1,
             }}
           >
+            {/* Action */}
             <Box
               sx={{
                 backgroundColor: "white",
                 borderRadius: "8px",
-                width: "114px",
+                width: "115px", // Consistent width
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -292,11 +351,13 @@ const Home = () => {
             >
               <Typography>Action</Typography>
             </Box>
+
+            {/* No */}
             <Box
               sx={{
                 backgroundColor: "white",
                 borderRadius: "8px",
-                width: "30px",
+                width: "50px", // Consistent width
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -304,11 +365,13 @@ const Home = () => {
             >
               <Typography>No</Typography>
             </Box>
+
+            {/* Project ID */}
             <Box
               sx={{
                 backgroundColor: "white",
                 borderRadius: "8px",
-                width: "115px",
+                width: "115px", // Consistent width
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -317,11 +380,12 @@ const Home = () => {
               <Typography>Project ID</Typography>
             </Box>
 
+            {/* Project Name */}
             <Box
               sx={{
                 backgroundColor: "white",
                 borderRadius: "8px",
-                width: "115px",
+                width: "115px", // Consistent width
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -330,11 +394,12 @@ const Home = () => {
               <Typography>Project Name</Typography>
             </Box>
 
+            {/* Task ID */}
             <Box
               sx={{
                 backgroundColor: "white",
                 borderRadius: "8px",
-                width: "115px",
+                width: "115px", // Consistent width
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -342,11 +407,13 @@ const Home = () => {
             >
               <Typography>Task ID</Typography>
             </Box>
+
+            {/* Action ID */}
             <Box
               sx={{
                 backgroundColor: "white",
                 borderRadius: "8px",
-                width: "115px",
+                width: "115px", // Consistent width
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -354,11 +421,13 @@ const Home = () => {
             >
               <Typography>Action ID</Typography>
             </Box>
+
+            {/* Category */}
             <Box
               sx={{
                 backgroundColor: "white",
                 borderRadius: "8px",
-                width: "115px",
+                width: "115px", // Consistent width
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -366,11 +435,13 @@ const Home = () => {
             >
               <Typography>Category</Typography>
             </Box>
+
+            {/* Activity */}
             <Box
               sx={{
                 backgroundColor: "white",
                 borderRadius: "8px",
-                width: "115px",
+                width: "115px", // Consistent width
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -378,11 +449,13 @@ const Home = () => {
             >
               <Typography>Activity</Typography>
             </Box>
+
+            {/* Description */}
             <Box
               sx={{
                 backgroundColor: "white",
                 borderRadius: "8px",
-                width: "115px",
+                width: "115px", // Consistent width
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -390,11 +463,13 @@ const Home = () => {
             >
               <Typography>Description</Typography>
             </Box>
+
+            {/* From */}
             <Box
               sx={{
                 backgroundColor: "white",
                 borderRadius: "8px",
-                width: "115px",
+                width: "115px", // Consistent width
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -402,11 +477,13 @@ const Home = () => {
             >
               <Typography>From</Typography>
             </Box>
+
+            {/* To */}
             <Box
               sx={{
                 backgroundColor: "white",
                 borderRadius: "8px",
-                width: "115px",
+                width: "115px", // Consistent width
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -414,11 +491,13 @@ const Home = () => {
             >
               <Typography>To</Typography>
             </Box>
+
+            {/* Hours */}
             <Box
               sx={{
                 backgroundColor: "white",
                 borderRadius: "8px",
-                width: "50px",
+                width: "50px", // Consistent width
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -427,102 +506,9 @@ const Home = () => {
               <Typography>Hours</Typography>
             </Box>
           </Box>
-          <Box
-            sx={{
-              display: "flex",
-              gap: 2,
-              boxShadow: 3,
-              borderRadius: 2,
-              padding: 2,
-            }}
-          >
-            <Button
-              sx={{
-                backgroundColor: "rgb(5, 147, 125)",
-                color: "white",
-                borderRadius: "8px",
-                padding: "0px 8px",
-                textTransform: "none",
-                fontSize: "13px",
-                minWidth: "auto",
-                "&:hover": {
-                  backgroundColor: "rgb(3, 115, 98)",
-                },
-              }}
-            >
-              Copy
-            </Button>
-            <Button
-              sx={{
-                backgroundColor: "rgb(212, 13, 13)",
-                color: "white",
-                borderRadius: "8px",
-                padding: "0px 8px",
-                textTransform: "none",
-                fontSize: "13px",
-                minWidth: "auto",
-                "&:hover": {
-                  backgroundColor: "rgb(183, 14, 14)",
-                },
-              }}
-            >
-              Delete
-            </Button>
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                width: "30px",
-                height: "32px",
-                backgroundColor: "grey",
-                borderRadius: "8px",
-                boxShadow: "0px 4px 6px rgba(0, 0, 0, )",
-              }}
-            >
-              <Typography
-                sx={{
-                  color: "white",
-                  fontSize: "20px",
 
-                  textAlign: "center",
-                }}
-              >
-                1
-              </Typography>
-            </Box>
-            <Input placeholder="Project ID" />
-            <Input placeholder="Project Name" />
-            <Input placeholder="Task ID" />
-            <Input placeholder="Action ID" />
-            <Input placeholder="Category" />
-            <Input placeholder="Activity" />
-            <Input placeholder="Description" />
-            <Input placeholder="From" />
-            <Input placeholder="To" />
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                width: "35px",
-                height: "32px",
-                backgroundColor: "rgb(8, 183, 69)",
-                borderRadius: "8px",
-                boxShadow: "0px 4px 6px rgba(0, 0, 0,)",
-              }}
-            >
-              <Typography
-                sx={{
-                  color: "white",
-                  fontSize: "20px",
-                  textAlign: "center",
-                }}
-              >
-                10.0
-              </Typography>
-            </Box>
-          </Box>
+          {/* Form */}
+          <RegistrationForm />
         </Box>
       </Box>
     </Box>
